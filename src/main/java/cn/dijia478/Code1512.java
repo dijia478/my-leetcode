@@ -31,6 +31,7 @@ package cn.dijia478;
  *
  * @author dijia478
  * @date 2020-09-03 15:16
+ * @type 数组
  */
 public class Code1512 {
 
@@ -68,5 +69,5 @@ public class Code1512 {
         }
         return sum;
     }
-    
+
 }
