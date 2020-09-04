@@ -15,6 +15,8 @@ import com.alibaba.fastjson.JSON;
  * [ 8, 9, 4 ],
  * [ 7, 6, 5 ]
  * ]
+ * <p>
+ * {@link Code54}
  *
  * @author dijia478
  * @date 2020-09-03 18:40
@@ -31,22 +33,22 @@ public class Code59 {
         int[][] mat = new int[n][n];
         int num = 1, tar = n * n;
         while (num <= tar) {
-            for (int i = l; i <= r; i++) {
+            for (int i = l; i <= r && num <= tar; i++) {
                 // left to right.
                 mat[t][i] = num++;
             }
             t++;
-            for (int i = t; i <= b; i++) {
+            for (int i = t; i <= b && num <= tar; i++) {
                 // top to bottom.
                 mat[i][r] = num++;
             }
             r--;
-            for (int i = r; i >= l; i--) {
+            for (int i = r; i >= l && num <= tar; i--) {
                 // right to left.
                 mat[b][i] = num++;
             }
             b--;
-            for (int i = b; i >= t; i--) {
+            for (int i = b; i >= t && num <= tar; i--) {
                 // bottom to top.
                 mat[i][l] = num++;
             }
