@@ -27,7 +27,7 @@ import java.util.List;
  *
  * @author dijia478
  * @date 2020-9-2 18:27
- * @type 数组
+ * @label 数组 双指针
  */
 public class Code15 {
 

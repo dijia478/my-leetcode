@@ -42,7 +42,7 @@ import java.util.List;
  *
  * @author dijia478
  * @date 2020-09-03 17:55
- * @type 数组
+ * @label 数组 哈希表
  */
 public class Code1365 {
 

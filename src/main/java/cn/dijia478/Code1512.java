@@ -31,7 +31,7 @@ package cn.dijia478;
  *
  * @author dijia478
  * @date 2020-09-03 15:16
- * @type 数组
+ * @label 数组 哈希表 数学
  */
 public class Code1512 {
 

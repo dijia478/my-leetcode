@@ -37,7 +37,7 @@ package cn.dijia478;
  *
  * @author dijia478
  * @date 2020-09-03 16:53
- * @type 数组
+ * @label 数组 位运算
  */
 public class Code1486 {
 

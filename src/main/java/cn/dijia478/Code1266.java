@@ -32,7 +32,7 @@ package cn.dijia478;
  *
  * @author dijia478
  * @date 2020-09-03 17:05
- * @type 数组
+ * @label 数组 几何
  */
 public class Code1266 {
 

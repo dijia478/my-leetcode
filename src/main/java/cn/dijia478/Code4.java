@@ -25,7 +25,7 @@ import java.util.Arrays;
  *
  * @author dijia478
  * @date 2020-09-03 17:20
- * @type 数组
+ * @label 数组 二分查找 分治算法
  */
 public class Code4 {
 

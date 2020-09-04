@@ -20,7 +20,7 @@ import com.alibaba.fastjson.JSON;
  *
  * @author dijia478
  * @date 2020-09-03 18:40
- * @type 数组
+ * @label 数组
  */
 public class Code59 {
 

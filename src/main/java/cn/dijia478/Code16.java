@@ -18,7 +18,7 @@ import java.util.Arrays;
  *
  * @author dijia478
  * @date 2020-6-24 10:35
- * @type 数组
+ * @label 数组 双指针
  */
 public class Code16 {
 

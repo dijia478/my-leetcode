@@ -36,7 +36,7 @@ package cn.dijia478;
  *
  * @author dijia478
  * @date 2020-09-03 17:59
- * @type 数组
+ * @label 数组
  */
 public class Code1395 {
 

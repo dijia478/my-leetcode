@@ -30,7 +30,7 @@ import java.util.List;
  *
  * @author dijia478
  * @date 2020-09-04 10:36
- * @type 数组
+ * @label 数组
  */
 public class Code54 {
 
