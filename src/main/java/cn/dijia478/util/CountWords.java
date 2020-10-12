@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 /**
  * 闲来无事，练习下正则和io，写个小程序，统计一篇英文文档里，所有单词出现的次数
@@ -52,12 +53,17 @@ public class CountWords {
             }
         }
 
-        // 按出现频率倒序排序
+        // 过滤掉长度4个字母以下的太简单的单词，按出现频率倒序排序，取频率最高的1000个
         List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
-        list.sort((o1, o2) -> o2.getValue().compareTo(o1.getValue()));
+        list = list.stream()
+                .filter(o -> o.getKey().length() >= 4)
+                .sorted((o1, o2) -> o2.getValue().compareTo(o1.getValue()))
+                // .limit(1000)
+                .collect(Collectors.toList());
 
         // 控制台打印结果
-        list.forEach(e -> System.out.println(e.getKey() + ":" + e.getValue()));
+        list.forEach(e -> System.out.println(e.getKey() + " : " + e.getValue()));
+        System.out.println("共统计单词" + list.size() + "种");
     }
 
 }
