@@ -21,6 +21,12 @@ public class TreeNode {
         val = x;
     }
 
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
+    }
+
     /**
      * 将leetcode上提供的测试用例（都是数组），转换成树，方便本地调试
      *
