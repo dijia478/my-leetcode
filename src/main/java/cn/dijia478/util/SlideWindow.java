@@ -1,6 +1,10 @@
 package cn.dijia478.util;
 
-import java.util.*;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -20,7 +24,7 @@ public class SlideWindow {
     public static void main(String[] args) throws InterruptedException {
         while (true) {
             // 任意10秒内，只允许2次通过
-            System.out.println(new Date().toString() + SlideWindow.isGo("ListId", 2, 10000L));
+            System.out.println(LocalTime.now().toString() + SlideWindow.isGo("ListId", 2, 10000L));
             // 睡眠0-10秒
             Thread.sleep(1000 * new Random().nextInt(10));
         }
@@ -46,19 +50,19 @@ public class SlideWindow {
             return true;
         }
 
-        // 队列已满（达到限制次数），则获取最早添加的时间戳
+        // 队列已满（达到限制次数），则获取队列中最早添加的时间戳
         Long farTime = list.get(count - 1);
-        // 用当前时间戳 减去 队列中最早添加的时间戳
-        if (nowTime - farTime > timeWindow) {
-            // 若结果大于timeWindow，则说明在timeWindow内，通过的次数小于count
+        // 用当前时间戳 减去 最早添加的时间戳
+        if (nowTime - farTime <= timeWindow) {
+            // 若结果小于等于timeWindow，则说明在timeWindow内，通过的次数大于count
+            // 不允许通过
+            return false;
+        } else {
+            // 若结果大于timeWindow，则说明在timeWindow内，通过的次数小于等于count
             // 允许通过，并删除最早添加的时间戳，将当前时间添加到队列开始位置
             list.remove(count - 1);
             list.add(0, nowTime);
             return true;
-        } else {
-            // 若结果小于等于timeWindow，则说明在timeWindow内，通过的次数大于等于count
-            // 不允许通过
-            return false;
         }
     }
 
