@@ -1,10 +1,7 @@
 package cn.dijia478.util;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -43,7 +40,7 @@ public class SlideWindow {
         // 获取当前时间
         long nowTime = System.currentTimeMillis();
         // 根据队列id，取出对应的限流队列，若没有则创建
-        List<Long> list = MAP.computeIfAbsent(listId, k -> new ArrayList<>());
+        List<Long> list = MAP.computeIfAbsent(listId, k -> new LinkedList<>());
         // 如果队列还没满，则允许通过，并添加当前时间戳到队列开始位置
         if (list.size() < count) {
             list.add(0, nowTime);
