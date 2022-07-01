@@ -3,7 +3,7 @@ package cn.dijia478.sort;
 import com.alibaba.fastjson.JSON;
 
 /**
- * 选择排序
+ * 2.选择排序
  *
  * 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。
  * 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。
@@ -15,7 +15,7 @@ import com.alibaba.fastjson.JSON;
  * @author dijia478
  * @date 2022/7/1
  */
-public class SelectionSort {
+public class Code02_SelectionSort {
 
     public static void selectionSort(int[] arr) {
         if (arr == null || arr.length < 2) {

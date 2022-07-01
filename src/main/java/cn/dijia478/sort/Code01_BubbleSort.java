@@ -3,7 +3,7 @@ package cn.dijia478.sort;
 import com.alibaba.fastjson.JSON;
 
 /**
- * 冒泡排序
+ * 1.冒泡排序
  *
  * 比较相邻的元素。如果第一个比第二个大，就交换他们两个。
  * 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。
@@ -16,12 +16,13 @@ import com.alibaba.fastjson.JSON;
  * @author dijia478
  * @date 2022/7/1
  */
-public class BubbleSort {
+public class Code01_BubbleSort {
 
     public static void bubbleSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
         }
+
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
