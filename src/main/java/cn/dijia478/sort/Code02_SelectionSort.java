@@ -37,6 +37,7 @@ public class Code02_SelectionSort {
     }
 
     public static void swap(int[] arr, int i, int j) {
+        // 数组的 i == j 时，用异或交换会出错
         if (i == j) {
             return;
         }
