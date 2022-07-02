@@ -1,11 +1,12 @@
 package cn.dijia478.sort;
 
-import cn.hutool.core.util.ArrayUtil;
 import com.alibaba.fastjson.JSON;
 
 import java.util.Arrays;
 
 /**
+ * 对数器
+ *
  * @author dijia478
  * @date 2022/7/2
  */
@@ -21,10 +22,10 @@ public class ValidUtil {
             int[] arr2 = copyArray(arr1);
             int[] arr3 = copyArray(arr1);
 
-            Code01_BubbleSort.bubbleSort(arr1);
+            Code02_SelectionSort.selectionSort(arr1);
 
             comparator(arr2);
-            if (!ArrayUtil.equals(arr1, arr2)) {
+            if (!Arrays.equals(arr1, arr2)) {
                 System.out.println("源数组：" + JSON.toJSONString(arr3));
                 System.out.println("期望结果：" + JSON.toJSONString(arr2));
                 System.out.println("实际结果：" + JSON.toJSONString(arr1));
