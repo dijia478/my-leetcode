@@ -1,7 +1,8 @@
 package cn.dijia478.array.easy;
 
 /**
- * 122. 买卖股票的最佳时机 II
+ * 买卖股票的最佳时机 II
+ * <p>
  * 给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。
  * <p>
  * 在每一天，你可以决定是否购买和/或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。
@@ -39,7 +40,7 @@ package cn.dijia478.array.easy;
  * @date 2022/5/12
  * @label 贪心 数组 动态规划
  */
-public class Code122 {
+public class Code2 {
 
     public static void main(String[] args) {
         int[] arr = {7, 1, 5, 3, 6, 4};
