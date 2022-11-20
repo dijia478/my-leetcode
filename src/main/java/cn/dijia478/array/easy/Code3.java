@@ -53,7 +53,7 @@ public class Code3 {
         int[] nums = {1,2,3,4,5,6,7};
         int k = 3;
 
-        rotate(nums, k);
+        rotate1(nums, k);
 
         System.out.println(JSON.toJSONString(nums));
     }
@@ -70,6 +70,43 @@ public class Code3 {
         }
         for (int i = 0; i < list.size(); i++) {
             nums[i] = list.get(i);
+        }
+    }
+
+    public static void rotate1(int[] nums, int k) {
+        int length = nums.length;
+        int[] temp = new int[length];
+        // System.arraycopy(nums, 0, temp, 0, nums.length);
+        for (int i = 0; i < length; i++) {
+            temp[i] = nums[i];
+        }
+        for (int i = 0; i < length; i++) {
+            nums[(i + k) % length] = temp[i];
+        }
+    }
+
+    public static void rotate2(int[] nums, int k) {
+        int length = nums.length;
+        k %= length;
+        reverse(nums, 0, length - 1);//先反转全部的元素
+        reverse(nums, 0, k - 1);//在反转前k个元素
+        reverse(nums, k, length - 1);//接着反转剩余的
+    }
+
+    /**
+     * 反转nums数组中[start,end]之间的元素
+     *
+     * @param nums
+     * @param start
+     * @param end
+     */
+    public static void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start++;
+            end--;
         }
     }
 
