@@ -1,14 +1,12 @@
 package cn.dijia478.array.easy;
 
-import cn.hutool.core.date.DateUtil;
 import com.alibaba.fastjson.JSON;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
- * 旋转数组
+ * 189. 旋转数组
  * <p>
  * 给你一个数组，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
  * <p>
