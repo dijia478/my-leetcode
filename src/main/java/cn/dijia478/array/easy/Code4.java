@@ -1,7 +1,10 @@
 package cn.dijia478.array.easy;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * 存在重复元素
@@ -35,14 +38,26 @@ import java.util.Set;
 public class Code4 {
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 1};
-        System.out.println(containsDuplicate(nums));
+        int[] nums = {1, 2, 3, 4};
+        System.out.println(containsDuplicate1(nums));
     }
 
     public static boolean containsDuplicate(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) {
             if (!set.add(num)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //=================================================================
+
+    public static boolean containsDuplicate1(int[] nums) {
+        Arrays.sort(nums);
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
                 return true;
             }
         }
