@@ -45,7 +45,7 @@ import java.util.List;
  * @date 2022/11/18
  * @label 数组 数学 双指针
  */
-public class Code3 {
+public class Code189 {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4,5,6,7};

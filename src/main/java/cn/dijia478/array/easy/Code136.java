@@ -33,7 +33,7 @@ package cn.dijia478.array.easy;
  * @date 2022/11/21
  * @label 位运算 数组
  */
-public class Code5 {
+public class Code136 {
 
     public static void main(String[] args) {
         int[] nums = {4, 1, 2, 1, 2};

@@ -40,7 +40,7 @@ package cn.dijia478.array.easy;
  * @date 2022/5/12
  * @label 贪心 数组 动态规划
  */
-public class Code2 {
+public class Code122 {
 
     public static void main(String[] args) {
         int[] arr = {7, 1, 5, 3, 6, 4};

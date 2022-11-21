@@ -50,7 +50,7 @@ package cn.dijia478.array.easy;
  * @date 2021/12/14
  * @label 数组 双指针
  */
-public class Code1 {
+public class Code26 {
 
     public static void main(String[] args) {
         int[] nums = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
