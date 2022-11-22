@@ -34,7 +34,7 @@ public class Code283 {
 
     public static void main(String[] args) {
         int[] nums = {1,0,1};
-        moveZeroes(nums);
+        moveZeroes1(nums);
         System.out.println(JSON.toJSONString(nums));
     }
 
@@ -43,16 +43,39 @@ public class Code283 {
             return;
         }
         int slow = 0;
-        for (int fast = 1; fast < nums.length; fast++) {
+        int fast = 0;
+        while (fast < nums.length) {
             if (nums[fast] == 0 && nums[slow] == 0) {
-                continue;
-            } else if (nums[fast] == 0 && nums[slow] != 0) {
+                fast++;
+            } else if (nums[fast] != 0 && nums[slow] != 0) {
+                fast++;
                 slow++;
-            } else if (nums[fast] != 0 && nums[slow] == 0) {
+            } else if (nums[fast] == 0 && nums[slow] != 0) {
+                fast++;
+                slow++;
+            } else {
+                // nums[fast] != 0 && nums[slow] == 0
                 nums[slow++] = nums[fast];
                 nums[fast] = 0;
-            } else {
-                slow++;
+            }
+        }
+    }
+
+    // =======================================
+
+    public static void moveZeroes1(int[] nums) {
+        if (nums.length < 2) {
+            return;
+        }
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            // 只要不为0就往前挪
+            if (nums[j] != 0) {
+                // i指向的值和j指向的值交换
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
             }
         }
     }
