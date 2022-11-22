@@ -1,4 +1,4 @@
-package cn.dijia478;
+package cn.dijia478.array.easy;
 
 import com.alibaba.fastjson.JSON;
 
