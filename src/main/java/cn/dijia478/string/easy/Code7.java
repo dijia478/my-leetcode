@@ -39,8 +39,8 @@ package cn.dijia478.string.easy;
 public class Code7 {
 
     public static void main(String[] args) {
-        int x = 1234567899;
-        int reverse = reverse(x);
+        int x = 123;
+        int reverse = reverse1(x);
         System.out.println(reverse);
     }
 
@@ -66,6 +66,19 @@ public class Code7 {
         } catch (NumberFormatException e) {
             return 0;
         }
+    }
+
+
+    public static int reverse1(int x) {
+        int res = 0;
+        while (x != 0) {
+            res = res * 10 + x % 10;
+            if (res % 10 != x % 10) {
+                return 0;
+            }
+            x /= 10;
+        }
+        return res;
     }
 
 }
