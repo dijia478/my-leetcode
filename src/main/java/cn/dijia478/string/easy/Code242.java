@@ -1,5 +1,7 @@
 package cn.dijia478.string.easy;
 
+import java.util.Arrays;
+
 /**
  * 242. 有效的字母异位词
  * <p>
@@ -35,11 +37,14 @@ public class Code242 {
 
     public static void main(String[] args) {
         String s = "anagram";
-        String t = "nagarama";
-        System.out.println(isAnagram(s, t));
+        String t = "anagrama";
+        System.out.println(isAnagram2(s, t));
     }
 
     public static boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
         int[] counts = new int[26];
         int[] countt = new int[26];
         char[] chars = s.toCharArray();
@@ -76,6 +81,34 @@ public class Code242 {
             count[t.charAt(i) - 'a']--;
         }
         return true;
+    }
+
+    public static boolean isAnagram2(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int[] count = new int[26];
+        char[] cs = s.toCharArray();
+        char[] ct = t.toCharArray();
+        for (int i = 0; i < cs.length; i++) {
+            count[cs[i] - 'a'] = count[cs[i] - 'a'] + 1;
+            count[ct[i] - 'a'] = count[ct[i] - 'a'] - 1;
+        }
+        for (int csv : count) {
+            if (csv != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isAnagram3(String s, String t) {
+        char[] sChar = s.toCharArray();
+        char[] tChar = t.toCharArray();
+        // 对两个字符串中的字符进行排序
+        Arrays.sort(sChar);
+        Arrays.sort(tChar);
+        return Arrays.equals(sChar, tChar);
     }
 
 }
