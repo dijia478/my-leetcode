@@ -57,4 +57,25 @@ public class Code242 {
         }
         return true;
     }
+
+    public static boolean isAnagram1(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        int[] count = new int[26];
+        // 统计字符串s中的每个字符的数量
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'a']++;
+        }
+        // 减去字符串t中的每个字符的数量
+        for (int i = 0; i < t.length(); i++) {
+            // 如果当前字符等于0，之前没出现过，直接返回false，
+            if (count[t.charAt(i) - 'a'] == 0) {
+                return false;
+            }
+            count[t.charAt(i) - 'a']--;
+        }
+        return true;
+    }
+
 }
