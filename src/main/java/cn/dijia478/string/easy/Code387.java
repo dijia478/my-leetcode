@@ -36,8 +36,8 @@ import java.util.Map;
 public class Code387 {
 
     public static void main(String[] args) {
-        String s = "aabb";
-        System.out.println(firstUniqChar(s));
+        String s = "loveleetcode";
+        System.out.println(firstUniqChar2(s));
     }
 
     public static int firstUniqChar(String s) {
@@ -59,4 +59,28 @@ public class Code387 {
         }
         return -1;
     }
+
+    public static int firstUniqChar1(String s) {
+        int[] count = new int[26];
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            count[chars[i] - 'a']++;
+        }
+        for (int i = 0; i < chars.length; i++) {
+            if (count[chars[i] - 'a'] == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int firstUniqChar2(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 }
