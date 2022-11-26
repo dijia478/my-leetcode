@@ -44,7 +44,7 @@ public class Code125 {
 
     public static void main(String[] args) {
         String s = "A man, a plan, a canal: Panama";
-        System.out.println(isPalindrome(s));
+        System.out.println(isPalindrome1(s));
     }
 
     public static boolean isPalindrome(String s) {
@@ -55,7 +55,7 @@ public class Code125 {
         StringBuilder sb = new StringBuilder();
         char[] chars = s.toCharArray();
         for (char aChar : chars) {
-            if (aChar >= 'a' && aChar <='z' || aChar >= '0' && aChar <= '9') {
+            if (aChar >= 'a' && aChar <= 'z' || aChar >= '0' && aChar <= '9') {
                 sb.append(aChar);
             }
         }
@@ -65,6 +65,27 @@ public class Code125 {
         int r = chars.length - 1;
         while (l < r) {
             if (chars[l] != chars[r]) {
+                return false;
+            }
+            l++;
+            r--;
+        }
+        return true;
+    }
+
+    public static boolean isPalindrome1(String s) {
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            if (!Character.isLetterOrDigit(s.charAt(l))) {
+                l++;
+                continue;
+            }
+            if (!Character.isLetterOrDigit(s.charAt(r))) {
+                r--;
+                continue;
+            }
+            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))) {
                 return false;
             }
             l++;
