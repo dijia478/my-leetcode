@@ -1,7 +1,5 @@
 package cn.dijia478.string.easy;
 
-import javax.xml.stream.FactoryConfigurationError;
-
 /**
  * 8. 字符串转换整数 (atoi)
  * <p>
