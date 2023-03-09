@@ -39,7 +39,7 @@ public class Code14 {
         // String[] strs = {"dog","racecar","car"};
         String[] strs = {"ab", "a"};
         // String[] strs = {"ab", "ab", "ab"};
-        System.out.println(longestCommonPrefix(strs));
+        System.out.println(longestCommonPrefix1(strs));
     }
 
     public static String longestCommonPrefix(String[] strs) {
@@ -68,5 +68,23 @@ public class Code14 {
             set.clear();
         }
         return "";
+    }
+
+    public static String longestCommonPrefix1(String[] strs) {
+        // 边界条件判断
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        // 默认第一个字符串是他们的公共前缀
+        String pre = strs[0];
+        int i = 1;
+        while (i < strs.length) {
+            // 不断的截取
+            while (strs[i].indexOf(pre) != 0) {
+                pre = pre.substring(0, pre.length() - 1);
+            }
+            i++;
+        }
+        return pre;
     }
 }
