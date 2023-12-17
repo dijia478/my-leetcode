@@ -28,15 +28,48 @@ public class Code67 {
     }
 
     public static String addBinary(String a, String b) {
-        final StringBuilder result = new StringBuilder();
-        for (int i = a.length() - 1, j = b.length() - 1, next = 0; i >= 0 || j >= 0 || next != 0; i--, j--) {
-            int sum = next;
-            sum += i >= 0 ? a.charAt(i) - '0' : 0;
-            sum += j >= 0 ? b.charAt(j) - '0' : 0;
-            result.append(sum % 2);
-            next = sum / 2;
+        int max = Math.max(a.length(), b.length());
+        a = getString(a, max);
+        b = getString(b, max);
+
+        StringBuilder sb = new StringBuilder();
+        int next = 0;
+        for (int i = max - 1; i >= 0; i--) {
+            int aint = Integer.parseInt(a.charAt(i) + "");
+            int bint = Integer.parseInt(b.charAt(i) + "");
+
+            int sum = aint + bint + next;
+            if (sum > 1) {
+                next = 1;
+            } else {
+                next = 0;
+            }
+            if (sum == 0) {
+                sb.append("0");
+            } else if (sum == 1) {
+                sb.append("1");
+            } else if (sum == 2) {
+                sb.append("0");
+            } else if (sum == 3) {
+                sb.append("1");
+            }
         }
-        return result.reverse().toString();
+        if (next == 1) {
+            sb.append("1");
+        }
+        sb.reverse();
+        return sb.toString();
+    }
+
+    private static String getString(String a, int max) {
+        if (a.length() < max) {
+            StringBuilder asb = new StringBuilder(a);
+            for (int i = 0; i < max - a.length(); i++) {
+                asb.insert(0, "0");
+            }
+            a = asb.toString();
+        }
+        return a;
     }
 
 }
